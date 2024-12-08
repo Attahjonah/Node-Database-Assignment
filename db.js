@@ -39,14 +39,14 @@ db.Users.deleteOne(
     {id: 3}
 );
 
-// db.Orders.aggregate([
-//     {
-//         $lookup: {
-//             from: "Items",
-//             localField: "Items_id",
-//             foreignField: "_id",
-//             as: "Item"
-//         }
-//     }
-// ]);
+db.Orders.aggregate([
+    {
+        $lookup: {
+            from: "Items",
+            localField: "Items_id",
+            foreignField: "_id",
+            as: "Item"
+        }
+    }
+]);
 
